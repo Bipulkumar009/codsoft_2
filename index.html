@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title> My Portfolio</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Roboto, sans-serif;
+        }
+
+        .menu-tab {
+            background-color: rgb(42, 41, 41);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            padding: 0 40px
+        }
+
+        .Name-text {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-panal {
+            color: white;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-panal a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-panal a:hover {
+            font-size: 17px;
+            color: rgb(29, 195, 255);
+            text-decoration: underline;
+        }
+
+        .contact-button {
+            font-weight: bold;
+            border: none;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            text-decoration: none;
+        }
+
+        .contact-button:hover {
+            background-color: rgb(29, 195, 255);
+        }
+
+        .intro {
+            background-color: rgb(78, 84, 200);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        .About {
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 60px 20px;
+            flex-wrap: wrap;
+        }
+
+        .About div {
+            max-width: 500px;
+            margin: 10px;
+        }
+
+        .profile {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: solid;
+            border-color: rgb(238, 238, 238);
+            object-fit: cover;
+        }
+
+        .Skill {
+            background-color: rgb(238, 238, 238);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .Skill h2 {
+            margin-bottom: 20px;
+        }
+
+        .skills-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .skill {
+            margin-bottom: 20px;
+        }
+
+        .skill span {
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: rgb(221, 221, 221);
+            border-radius: 20px;
+            overflow: hidden;
+            height: 20px;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: rgb(0, 173, 181);
+            text-align: right;
+            padding-right: 10px;
+            line-height: 20px;
+            border-radius: 20px 0 0 20px;
+            width: 0;
+            animation: fillBar 1s forwards;
+        }
+
+        @keyframes fillBar {
+            to {
+                width: var(--width);
+            }
+        }
+
+        .projects {
+            padding: 60px 20px;
+            background-color: white;
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: rgb(51, 51, 51);
+        }
+
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 350px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            margin-top: 0;
+            color: rgb(42, 42, 42);
+            font-size: 22px;
+        }
+
+        .project-content p {
+            color: rgb(85, 85, 85);
+            margin-bottom: 20px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-item {
+            background-color: rgb(224, 224, 224);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .tech-item.bold {
+            background-color: rgb(208, 208, 208);
+            font-weight: bold;
+        }
+
+        .Contact {
+            text-align: center;
+            margin-top: 60px;
+            background-color: rgb(238, 238, 238);
+            padding: 20px 20px;
+
+        }
+
+        .contact-card {
+            border-radius: 12px;
+            padding: 30px 20px;
+            background-color: white;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-card p:hover {
+            color: rgb(29, 195, 255);
+            text-decoration: underline;
+            font-size: 17px;
+        }
+
+        .contact-img {
+            width: 32px;
+            height: 32px;
+            margin: 10px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+
+        .social-icons a:hover .contact-img {
+            transform: scale(1.2);
+            filter: brightness(1.2);
+        }
+
+
+        footer {
+            background-color: rgb(34, 40, 49);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer button {
+            background: none;
+            border: none;
+            margin: 0 5px;
+        }
+
+        footer img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-tab">
+        <div>
+            <p class="Name-text">Bipul Kumar</p>
+        </div>
+        <div class="nav-panal">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <a href="#contact" class="contact-button">Contact Me</a>
+    </div>
+
+    <div class="intro">
+        <div class="intro-text">
+            <h1>
+                Hi, I'm Bipul Kumar
+            </h1>
+            <h3>
+                Web Developer & Designer passionate about creating beautiful and functional websites
+            </h3>
+        </div>
+    </div>
+    <div class="About" id="about">
+        <div>
+            <h2>About Me</h2>
+            <h3>Who I am</h3>
+            <p>
+                I'm Bipul Kumar, a web developer with expertise in building websites and web applications. I specialize
+                in front-end development but also have experience with back-end technologies.
+            </p>
+            <p>
+                When I'm not coding, you can find me hiking, reading, or playing badminton.
+            </p>
+        </div>
+        <div>
+            <img class="profile" src="images/bipulimg.jpg" alt="Profile Image">
+        </div>
+    </div>
+    <div class="Skill" id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <span>HTML</span>
+                <div class="progress-bar">
+                    <div class="progress" style="--width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>CSS</span>
+                <div class="progress-bar">
+                    <div class="progress" style="--width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>Python</span>
+                <div class="progress-bar">
+                    <div class="progress" style="--width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>MySQL</span>
+                <div class="progress-bar">
+                    <div class="progress" style="--width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="project-container">
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Carlelo Landing Page</h3>
+                    <p>A modern landing page for Carlelo Company with modern and interactive elements.</p>
+                    <div class="tech-stack">
+                        <span class="tech-item bold">HTML</span>
+                        <span class="tech-item">CSS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Professional Portfolio</h3>
+                    <p>A responsive portfolio website showcasing my skills and projects with modern design elements.</p>
+                    <div class="tech-stack">
+                        <span class="tech-item bold">HTML</span>
+                        <span class="tech-item">CSS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Advanced Calculator</h3>
+                    <p>A feature-rich calculator application with scientific functions and responsive design.</p>
+                    <div class="tech-stack">
+                        <span class="tech-item bold">HTML</span>
+                        <span class="tech-item">CSS</span>
+                        <span class="tech-item">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Contact" id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-card">
+            <h3>Contact Number</h3>
+            <p>+91 8271669721</p>
+
+            <h3>E-mail Address</h3>
+            <p>bipulkumar009vk@gmail.com</p>
+
+            <h3>Location</h3>
+            <p>Greater Noida,India</p>
+            <div class="social-icons">
+                <a href="https://github.com/Bipulkumar009" target="_blank">
+                    <img class="contact-img" src="images/github.svg" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/bipul-kumar-7088a5335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    target="_blank">
+                    <img class="contact-img" src="images/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://www.instagram.com/vipul_kr09?igsh=MThhZXV2anY5OGIwMw==" target="_blank">
+                    <img class="contact-img" src="images/instagram.svg" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Bipul Kumar.All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
